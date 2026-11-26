@@ -17,7 +17,7 @@
  *      and installs the BPF filter. libseccomp also adds an architecture check, so syscalls
  *      made through a foreign ABI (e.g. 32-bit int 0x80) get the default action.
  *   5. execv(program) - the filter survives exec and is inherited by every thread and child,
- *      so `execve` itself must be allowed (added by the Python side, see docs/METHODOLOGY.md).
+ *      so `execve` itself must be allowed (added by the Python side).
  *
  * Default actions (--mode):
  *   kill     SCMP_ACT_KILL_PROCESS : the whole process is killed with SIGSYS (main experiment, "deny")

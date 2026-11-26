@@ -13,7 +13,7 @@ restarted with the same command and continues where it stopped.
 
 Sampling: temperature 0.7, seed = repeat number (0..4). At temperature 0 every repeat would
 give the same answer and the 5 repeats would measure nothing; a fixed seed per repeat keeps
-the whole grid reproducible. (docs/METHODOLOGY.md)
+the whole grid reproducible.
 
 Examples:
     python harness/generate_policies.py --dry-run                     # show the plan and one prompt

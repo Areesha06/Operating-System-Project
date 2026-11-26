@@ -23,7 +23,7 @@ from . import syscalls
 
 # The launcher needs execve to start the program at all (the filter is installed
 # before exec). It is added to every policy at ENFORCEMENT time only and is never
-# counted in attack-surface metrics. See docs/METHODOLOGY.md.
+# counted in attack-surface metrics.
 LAUNCH_SYSCALLS = ["execve"]
 
 
