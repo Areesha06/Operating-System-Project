@@ -1,0 +1,106 @@
+4777  execve("/usr/bin/cp", ["/usr/bin/cp", "srcdir/a.bin", "copy.bin"], 0x7fff757356d8 /* 30 vars */) = 0
+4777  brk(NULL)                         = 0x61143da90000
+4777  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f774ac71000
+4777  access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+4777  openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+4777  fstat(3, {st_mode=S_IFREG|0644, st_size=20767, ...}) = 0
+4777  mmap(NULL, 20767, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f774ac6b000
+4777  close(3)                          = 0
+4777  openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libselinux.so.1", O_RDONLY|O_CLOEXEC) = 3
+4777  read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+4777  fstat(3, {st_mode=S_IFREG|0644, st_size=199120, ...}) = 0
+4777  mmap(NULL, 206288, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f774ac38000
+4777  mmap(0x7f774ac3f000, 135168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7000) = 0x7f774ac3f000
+4777  mmap(0x7f774ac60000, 28672, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f774ac60000
+4777  mmap(0x7f774ac67000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2f000) = 0x7f774ac67000
+4777  mmap(0x7f774ac69000, 5584, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f774ac69000
+4777  close(3)                          = 0
+4777  openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libacl.so.1", O_RDONLY|O_CLOEXEC) = 3
+4777  read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+4777  fstat(3, {st_mode=S_IFREG|0644, st_size=38984, ...}) = 0
+4777  mmap(NULL, 36896, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f774ac2e000
+4777  mmap(0x7f774ac30000, 20480, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f774ac30000
+4777  mmap(0x7f774ac35000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7000) = 0x7f774ac35000
+4777  mmap(0x7f774ac36000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x8000) = 0x7f774ac36000
+4777  close(3)                          = 0
+4777  openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libattr.so.1", O_RDONLY|O_CLOEXEC) = 3
+4777  read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+4777  fstat(3, {st_mode=S_IFREG|0644, st_size=26776, ...}) = 0
+4777  mmap(NULL, 28696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f774ac26000
+4777  mmap(0x7f774ac28000, 12288, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f774ac28000
+4777  mmap(0x7f774ac2b000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7f774ac2b000
+4777  mmap(0x7f774ac2c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x5000) = 0x7f774ac2c000
+4777  close(3)                          = 0
+4777  openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+4777  read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \250\2\0\0\0\0\0"..., 832) = 832
+4777  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+4777  fstat(3, {st_mode=S_IFREG|0755, st_size=2190608, ...}) = 0
+4777  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+4777  mmap(NULL, 2231696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f774aa00000
+4777  mmap(0x7f774aa28000, 1671168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f774aa28000
+4777  mmap(0x7f774abc0000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x7f774abc0000
+4777  mmap(0x7f774ac0e000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20e000) = 0x7f774ac0e000
+4777  mmap(0x7f774ac14000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f774ac14000
+4777  close(3)                          = 0
+4777  openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3
+4777  read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+4777  fstat(3, {st_mode=S_IFREG|0644, st_size=699056, ...}) = 0
+4777  mmap(NULL, 701112, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f774a954000
+4777  mmap(0x7f774a957000, 507904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f774a957000
+4777  mmap(0x7f774a9d3000, 176128, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7f000) = 0x7f774a9d3000
+4777  mmap(0x7f774a9fe000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa9000) = 0x7f774a9fe000
+4777  close(3)                          = 0
+4777  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f774ac24000
+4777  mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f774ac21000
+4777  arch_prctl(ARCH_SET_FS, 0x7f774ac21840) = 0
+4777  set_tid_address(0x7f774ac21e68)   = 4777
+4777  set_robust_list(0x7f774ac21b20, 24) = 0
+4777  rseq(0x7f774ac216a0, 0x20, 0, 0x53053053) = 0
+4777  mprotect(0x7f774ac0e000, 16384, PROT_READ) = 0
+4777  mprotect(0x7f774a9fe000, 4096, PROT_READ) = 0
+4777  mprotect(0x7f774ac2c000, 4096, PROT_READ) = 0
+4777  mprotect(0x7f774ac36000, 4096, PROT_READ) = 0
+4777  mprotect(0x7f774ac67000, 4096, PROT_READ) = 0
+4777  mprotect(0x611401a6a000, 4096, PROT_READ) = 0
+4777  mprotect(0x7f774acb6000, 8192, PROT_READ) = 0
+4777  prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+4777  getrandom("\x61\x0f\xac\x51\x15\x78\x87\x36", 8, GRND_NONBLOCK) = 8
+4777  munmap(0x7f774ac6b000, 20767)     = 0
+4777  statfs("/sys/fs/selinux", {f_type=SYSFS_MAGIC, f_bsize=4096, f_blocks=0, f_bfree=0, f_bavail=0, f_files=0, f_ffree=0, f_fsid={val=[0x59ab4e5d, 0x6ccb515d]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_NOSUID|ST_NODEV|ST_NOEXEC|ST_NOATIME}) = 0
+4777  statfs("/selinux", 0x7ffd325c7e10) = -1 ENOENT (No such file or directory)
+4777  brk(NULL)                         = 0x61143da90000
+4777  brk(0x61143dab1000)               = 0x61143dab1000
+4777  openat(AT_FDCWD, "/proc/filesystems", O_RDONLY|O_CLOEXEC) = 3
+4777  fstat(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+4777  read(3, "nodev\tsysfs\nnodev\ttmpfs\nnodev\tpr"..., 1024) = 440
+4777  lseek(3, 0, SEEK_CUR)             = 440
+4777  lseek(3, 414, SEEK_SET)           = 414
+4777  close(3)                          = 0
+4777  openat(AT_FDCWD, "/proc/mounts", O_RDONLY|O_CLOEXEC) = 3
+4777  fstat(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+4777  read(3, "none /usr/lib/modules/6.18.58.1-"..., 1024) = 1024
+4777  read(3, "6k,nr_inodes=1007059,mode=755 0 "..., 1024) = 1024
+4777  read(3, "msize=65536,trans=fd,rfd=6,wfd=6"..., 1024) = 1024
+4777  read(3, "follow,size=1024k,nr_inodes=1024"..., 1024) = 467
+4777  read(3, "", 1024)                 = 0
+4777  close(3)                          = 0
+4777  access("/etc/selinux/config", F_OK) = -1 ENOENT (No such file or directory)
+4777  geteuid()                         = 1000
+4777  openat(AT_FDCWD, "copy.bin", O_RDONLY|O_PATH|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+4777  newfstatat(AT_FDCWD, "srcdir/a.bin", {st_mode=S_IFREG|0644, st_size=50000, ...}, 0) = 0
+4777  openat(AT_FDCWD, "srcdir/a.bin", O_RDONLY) = 3
+4777  fstat(3, {st_mode=S_IFREG|0644, st_size=50000, ...}) = 0
+4777  openat(AT_FDCWD, "copy.bin", O_WRONLY|O_CREAT|O_EXCL, 0644) = 4
+4777  ioctl(4, BTRFS_IOC_CLONE or FICLONE, 3) = -1 EOPNOTSUPP (Operation not supported)
+4777  fstat(4, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+4777  fadvise64(3, 0, 0, POSIX_FADV_SEQUENTIAL) = 0
+4777  uname({sysname="Linux", nodename="DESKTOP-EVSL35S", ...}) = 0
+4777  copy_file_range(3, NULL, 4, NULL, 9223372035781033984, 0) = 50000
+4777  copy_file_range(3, NULL, 4, NULL, 9223372035781033984, 0) = 0
+4777  close(4)                          = 0
+4777  close(3)                          = 0
+4777  close(0)                          = 0
+4777  close(1)                          = 0
+4777  close(2)                          = 0
+4777  exit_group(0)                     = ?
+4777  +++ exited with 0 +++

@@ -1,0 +1,33 @@
+{
+  "program": "mini_httpd",
+  "source": "llama3.2:3b",
+  "prompt": "b",
+  "repeat": 2,
+  "allow": [
+    "access",
+    "brk",
+    "close",
+    "fstat",
+    "mmap",
+    "mprotect",
+    "openat",
+    "pread64",
+    "read",
+    "set_robust_list",
+    "set_tid_address",
+    "write"
+  ],
+  "json_valid": true,
+  "extraction": "direct",
+  "raw_output": "{\"allow\": [\"access\", \"brk\", \"close\", \"fstat\", \"mmap\", \"mprotect\", \"openat\", \"pread64\", \"read\", \"set_robust_list\", \"set_tid_address\", \"write\"], \n \"notes\": \"Excluded calls that could potentially be used for file descriptor manipulation, socket management, or process manipulation.\"}",
+  "temperature": 0.7,
+  "seed": 2,
+  "wall_s": 0.86,
+  "total_s": 0.86,
+  "load_s": 0.0,
+  "prompt_tokens": 438,
+  "output_tokens": 78,
+  "gen_s": 0.76,
+  "system_prompt": "You are a Linux security engineer who writes seccomp allow-lists.\nA seccomp allow-list is the set of system calls a program is permitted to make.\nEvery system call NOT on the list is blocked and the program is killed if it makes one.\n\nRules:\n1. Use exact Linux x86_64 system call names as in <asm/unistd_64.h>, for example: openat, newfstatat, exit_group.\n2. The program must keep working in ALL of its normal uses, not only the one described.\n3. Do NOT include system calls the program does not need for normal operation. Every extra system call is attack surface.\n4. Reply with JSON only, in exactly this form:\n{\"allow\": [\"syscall_1\", \"syscall_2\"], \"notes\": \"one short sentence\"}",
+  "user_prompt": "Program: mini_httpd\n\nThe following system calls were recorded with `strace -f` during one normal run of this program (syscall: number of calls):\n- execve: 1\n- brk: 1\n- mmap: 8\n- access: 1\n- openat: 3\n- fstat: 2\n- close: 5\n- read: 2\n- pread64: 2\n- arch_prctl: 1\n- set_tid_address: 1\n- set_robust_list: 1\n- rseq: 1\n- mprotect: 3\n- prlimit64: 1\n- getrandom: 1\n- munmap: 1\n- chdir: 1\n- socket: 1\n- setsockopt: 1\n- bind: 1\n- listen: 1\n- accept: 1\n- newfstatat: 1\n- write: 1\n- sendfile: 1\n- exit_group: 1\n\nThis recording may not cover every normal use of the program.\nWrite the seccomp allow-list for this program."
+}

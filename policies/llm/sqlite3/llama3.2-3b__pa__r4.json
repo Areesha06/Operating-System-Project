@@ -1,0 +1,20 @@
+{
+  "program": "sqlite3",
+  "source": "llama3.2:3b",
+  "prompt": "a",
+  "repeat": 4,
+  "allow": [],
+  "json_valid": false,
+  "extraction": "failed",
+  "raw_output": "{\"allow\": [\"openat\", \"open\", \"newfstatat\", \"newfstat\", \"openat64\", \"exit\", \"exit_group\", \"exit_thread\", \"waitid\", \"waitpid\", \"wait\", \"read\", \"write\", \"pread\", \"pwrite\", \"mmap\", \"mmap2\", \"munmap\", \"close\", \"closeat\", \"closeat64\", \"fcntl\", \"fcntl64\", \"fstat\", \"fstatat\", \"lseek\", \"lockf\", \"msync\", \"usleep\", \"nanosleep\", \"clock\", \"clock_gettime\", \"clock_getres\", \"getpid\", \"getppid\", \"getuid\", \"geteuid\", \"setuid\", \"setgid\", \"chdir\", \"fchdir\", \"chroot\", \"chdirat\", \"fchdirat\", \"fchdirat64\", \"futimesat\", \"futimes\", \"futimens\", \"fdatasync\", \"fsync\", \"fdatasyncat\", \"fdatasyncat64\", \"fsyncat\", \"fsyncat64\", \"readat\", \"readat64\", \"readv\", \"writev\", \"preadv\", \"pwritev\", \"msyncat\", \"msyncat64\", \"msyncat\", \"usleep\", \"usleepat\", \"clock_gettime64\", \"clock_getres64\", \"clock_getid\", \"getresuid\", \"getresgid\", \"getresuidat\", \"getresgidat\", \"chown\", \"fchown\", \"fchownat\", \"chownat\", \"fchownat\", \"futimes\", \"futimens\", \"fdatasync\", \"fsync\", \"getdents\", \"getdents64\", \"getpwnam\", \"getpwuid\", \"getpwuidat\", \"getpwuidr\", \"getgrnam\", \"getgrgid\", \"getgrgidat\", \"getgrnamr\", \"getresuid\", \"getresgid\", \"getresuidat\", \"getresgidat\", \"setresuid\", \"setresgid\", \"setresuidat\", \"setresgidat\", \"chown\", \"fchown\", \"fchownat\", \"chownat\", \"futimes\", \"futimens\", \"fdatasync\", \"fsync\", \"getdents\", \"getdents64\", \"getpwnam\", \"getpwuid\", \"getpwuidat\", \"getpwuidr\", \"getgrnam\", \"getgrgid\", \"getgrgidat\", \"getgrnamr\", \"getresuid\", \"getresgid\", \"getresuidat\", \"setresuid\", \"setresgid\", \"setresuidat\", \"fstat\", \"fstatat\", \"lseek\", \"lockf\", \"msync\", \"usleep\", \"nanosleep\", \"clock\", \"clock_gettime\", \"clock_getres\", \"getpid\", \"getppid\", \"getuid\", \"geteuid\", \"setuid\", \"setgid\", \"chdir\", \"fchdir\", \"chroot\", \"chdirat\", \"fchdirat\", \"futimesat\", \"futimes\", \"futimens\", \"fdatasync\", \"fsync\", \"fdatasyncat\", \"fdatasyncat64\", \"fsyncat\", \"fsyncat64\", \"readat\", \"readat64\", \"readv\", \"writev\", \"preadv\", \"pwritev\", \"msyncat\", \"msyncat64\", \"msyncat\", \"usleep\", \"usleepat\", \"clock_gettime64\", \"clock_getres64\", \"clock_getid\", \"getresuid\", \"getresgid\", \"getresuidat\", \"getresgidat\", \"setresuid\", \"setresgid\", \"setresuidat\", \"setresgidat\", \"fopen\", \"fopenat\", \"fopenat64\", \"fread\", \"fwrite\", \"ftruncate\", \"ftruncateat\", \"ftruncateat64\", \"fstatfs\", \"fstatfs64\", \"fstatfsat\", \"fstatfsat64\", \"statfs\", \"statfs64\", \"statfsat\", \"statfsat64\", \"stat\", \"statat\", \"statfs\", \"statfs64\", \"statfsat\", \"statfsat64\", \"lstat\", \"lstatat\", \"lstatfs\", \"lstatfs64\", \"lstatfsat\", \"lstatfsat64\", \"getcwd\", \"getcwdat\", \"getcwdat64\", \"getcwd\", \"getcwd\", \"get",
+  "temperature": 0.7,
+  "seed": 4,
+  "wall_s": 10.6,
+  "total_s": 10.6,
+  "load_s": 0.0,
+  "prompt_tokens": 209,
+  "output_tokens": 1024,
+  "gen_s": 10.48,
+  "system_prompt": "You are a Linux security engineer who writes seccomp allow-lists.\nA seccomp allow-list is the set of system calls a program is permitted to make.\nEvery system call NOT on the list is blocked and the program is killed if it makes one.\n\nRules:\n1. Use exact Linux x86_64 system call names as in <asm/unistd_64.h>, for example: openat, newfstatat, exit_group.\n2. The program must keep working in ALL of its normal uses, not only the one described.\n3. Do NOT include system calls the program does not need for normal operation. Every extra system call is attack surface.\n4. Reply with JSON only, in exactly this form:\n{\"allow\": [\"syscall_1\", \"syscall_2\"], \"notes\": \"one short sentence\"}",
+  "user_prompt": "Program: sqlite3\n\nWrite the seccomp allow-list for this program."
+}

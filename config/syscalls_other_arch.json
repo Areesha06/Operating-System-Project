@@ -1,0 +1,286 @@
+{
+ "_llseek": [
+  "i386"
+ ],
+ "_newselect": [
+  "i386"
+ ],
+ "bdflush": [
+  "i386"
+ ],
+ "break": [
+  "i386"
+ ],
+ "chown32": [
+  "i386"
+ ],
+ "clock_adjtime64": [
+  "i386",
+  "generic"
+ ],
+ "clock_getres_time64": [
+  "i386",
+  "generic"
+ ],
+ "clock_gettime64": [
+  "i386",
+  "generic"
+ ],
+ "clock_nanosleep_time64": [
+  "i386",
+  "generic"
+ ],
+ "clock_settime64": [
+  "i386",
+  "generic"
+ ],
+ "fadvise64_64": [
+  "i386"
+ ],
+ "fchown32": [
+  "i386"
+ ],
+ "fcntl64": [
+  "i386"
+ ],
+ "fstat64": [
+  "i386"
+ ],
+ "fstatat64": [
+  "i386"
+ ],
+ "fstatfs64": [
+  "i386"
+ ],
+ "ftime": [
+  "i386"
+ ],
+ "ftruncate64": [
+  "i386"
+ ],
+ "futex_time64": [
+  "i386",
+  "generic"
+ ],
+ "getegid32": [
+  "i386"
+ ],
+ "geteuid32": [
+  "i386"
+ ],
+ "getgid32": [
+  "i386"
+ ],
+ "getgroups32": [
+  "i386"
+ ],
+ "getresgid32": [
+  "i386"
+ ],
+ "getresuid32": [
+  "i386"
+ ],
+ "getuid32": [
+  "i386"
+ ],
+ "gtty": [
+  "i386"
+ ],
+ "idle": [
+  "i386"
+ ],
+ "io_pgetevents_time64": [
+  "i386",
+  "generic"
+ ],
+ "ipc": [
+  "i386"
+ ],
+ "lchown32": [
+  "i386"
+ ],
+ "lock": [
+  "i386"
+ ],
+ "lstat64": [
+  "i386"
+ ],
+ "mmap2": [
+  "i386"
+ ],
+ "mpx": [
+  "i386"
+ ],
+ "mq_timedreceive_time64": [
+  "i386",
+  "generic"
+ ],
+ "mq_timedsend_time64": [
+  "i386",
+  "generic"
+ ],
+ "nice": [
+  "i386"
+ ],
+ "oldfstat": [
+  "i386"
+ ],
+ "oldlstat": [
+  "i386"
+ ],
+ "oldolduname": [
+  "i386"
+ ],
+ "oldstat": [
+  "i386"
+ ],
+ "olduname": [
+  "i386"
+ ],
+ "ppoll_time64": [
+  "i386",
+  "generic"
+ ],
+ "prof": [
+  "i386"
+ ],
+ "profil": [
+  "i386"
+ ],
+ "pselect6_time64": [
+  "i386",
+  "generic"
+ ],
+ "readdir": [
+  "i386"
+ ],
+ "recvmmsg_time64": [
+  "i386",
+  "generic"
+ ],
+ "rt_sigtimedwait_time64": [
+  "i386",
+  "generic"
+ ],
+ "sched_rr_get_interval_time64": [
+  "i386",
+  "generic"
+ ],
+ "semtimedop_time64": [
+  "i386",
+  "generic"
+ ],
+ "sendfile64": [
+  "i386"
+ ],
+ "setfsgid32": [
+  "i386"
+ ],
+ "setfsuid32": [
+  "i386"
+ ],
+ "setgid32": [
+  "i386"
+ ],
+ "setgroups32": [
+  "i386"
+ ],
+ "setregid32": [
+  "i386"
+ ],
+ "setresgid32": [
+  "i386"
+ ],
+ "setresuid32": [
+  "i386"
+ ],
+ "setreuid32": [
+  "i386"
+ ],
+ "setuid32": [
+  "i386"
+ ],
+ "sgetmask": [
+  "i386"
+ ],
+ "sigaction": [
+  "i386"
+ ],
+ "signal": [
+  "i386"
+ ],
+ "sigpending": [
+  "i386"
+ ],
+ "sigprocmask": [
+  "i386"
+ ],
+ "sigreturn": [
+  "i386"
+ ],
+ "sigsuspend": [
+  "i386"
+ ],
+ "socketcall": [
+  "i386"
+ ],
+ "ssetmask": [
+  "i386"
+ ],
+ "stat64": [
+  "i386"
+ ],
+ "statfs64": [
+  "i386"
+ ],
+ "stime": [
+  "i386"
+ ],
+ "stty": [
+  "i386"
+ ],
+ "sync_file_range2": [
+  "generic"
+ ],
+ "timer_gettime64": [
+  "i386",
+  "generic"
+ ],
+ "timer_settime64": [
+  "i386",
+  "generic"
+ ],
+ "timerfd_gettime64": [
+  "i386",
+  "generic"
+ ],
+ "timerfd_settime64": [
+  "i386",
+  "generic"
+ ],
+ "truncate64": [
+  "i386"
+ ],
+ "ugetrlimit": [
+  "i386"
+ ],
+ "ulimit": [
+  "i386"
+ ],
+ "umount": [
+  "i386"
+ ],
+ "utimensat_time64": [
+  "i386",
+  "generic"
+ ],
+ "vm86": [
+  "i386"
+ ],
+ "vm86old": [
+  "i386"
+ ],
+ "waitpid": [
+  "i386"
+ ]
+}

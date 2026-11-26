@@ -1,0 +1,15 @@
+# build outputs (rebuild with `make`)
+programs/bin/*
+!programs/bin/.gitkeep
+enforce/bin/
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# NOTE: data/, policies/ and results/ ARE committed - they are the experiment's evidence.

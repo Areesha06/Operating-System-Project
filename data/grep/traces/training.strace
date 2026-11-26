@@ -1,0 +1,64 @@
+4814  execve("/usr/bin/grep", ["/usr/bin/grep", "-c", "ERROR", "log.txt"], 0x7ffefd51c720 /* 30 vars */) = 0
+4814  brk(NULL)                         = 0x5db08e502000
+4814  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x73291bb62000
+4814  access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+4814  openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+4814  fstat(3, {st_mode=S_IFREG|0644, st_size=20767, ...}) = 0
+4814  mmap(NULL, 20767, PROT_READ, MAP_PRIVATE, 3, 0) = 0x73291bb5c000
+4814  close(3)                          = 0
+4814  openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3
+4814  read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+4814  fstat(3, {st_mode=S_IFREG|0644, st_size=699056, ...}) = 0
+4814  mmap(NULL, 701112, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73291bab0000
+4814  mmap(0x73291bab3000, 507904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x73291bab3000
+4814  mmap(0x73291bb2f000, 176128, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7f000) = 0x73291bb2f000
+4814  mmap(0x73291bb5a000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa9000) = 0x73291bb5a000
+4814  close(3)                          = 0
+4814  openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+4814  read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \250\2\0\0\0\0\0"..., 832) = 832
+4814  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+4814  fstat(3, {st_mode=S_IFREG|0755, st_size=2190608, ...}) = 0
+4814  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+4814  mmap(NULL, 2231696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x73291b800000
+4814  mmap(0x73291b828000, 1671168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x73291b828000
+4814  mmap(0x73291b9c0000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x73291b9c0000
+4814  mmap(0x73291ba0e000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20e000) = 0x73291ba0e000
+4814  mmap(0x73291ba14000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x73291ba14000
+4814  close(3)                          = 0
+4814  mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x73291baad000
+4814  arch_prctl(ARCH_SET_FS, 0x73291baad740) = 0
+4814  set_tid_address(0x73291baadd68)   = 4814
+4814  set_robust_list(0x73291baada20, 24) = 0
+4814  rseq(0x73291baad6a0, 0x20, 0, 0x53053053) = 0
+4814  mprotect(0x73291ba0e000, 16384, PROT_READ) = 0
+4814  mprotect(0x73291bb5a000, 4096, PROT_READ) = 0
+4814  mprotect(0x5db08cade000, 8192, PROT_READ) = 0
+4814  mprotect(0x73291bba7000, 8192, PROT_READ) = 0
+4814  prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+4814  getrandom("\x9c\x20\x34\xba\x3c\x98\xb2\x81", 8, GRND_NONBLOCK) = 8
+4814  munmap(0x73291bb5c000, 20767)     = 0
+4814  brk(NULL)                         = 0x5db08e502000
+4814  brk(0x5db08e523000)               = 0x5db08e523000
+4814  openat(AT_FDCWD, "/proc/self/maps", O_RDONLY) = 3
+4814  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x73291bb60000
+4814  lseek(3, 0, SEEK_SET)             = 0
+4814  read(3, "5db08cab1000-5db08cab5000 r--p 0"..., 8192) = 2833
+4814  read(3, "", 5359)                 = 0
+4814  close(3)                          = 0
+4814  munmap(0x73291bb60000, 8192)      = 0
+4814  sigaltstack({ss_sp=0x5db08cae0700, ss_flags=0, ss_size=65536}, NULL) = 0
+4814  rt_sigaction(SIGSEGV, {sa_handler=0x5db08cad6c00, sa_mask=[HUP INT QUIT USR1 USR2 PIPE ALRM TERM CHLD URG XCPU XFSZ VTALRM PROF WINCH IO PWR], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x73291b845cb0}, NULL, 8) = 0
+4814  rt_sigaction(SIGSEGV, {sa_handler=0x5db08cad6c00, sa_mask=[HUP INT QUIT USR1 USR2 PIPE ALRM TERM CHLD URG XCPU XFSZ VTALRM PROF WINCH IO PWR], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x73291b845cb0}, NULL, 8) = 0
+4814  fstat(1, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+4814  openat(AT_FDCWD, "log.txt", O_RDONLY|O_NOCTTY) = 3
+4814  fstat(3, {st_mode=S_IFREG|0644, st_size=41317, ...}) = 0
+4814  read(3, "line 1 ok\nline 2 ok\nline 3 ok\nli"..., 98304) = 41317
+4814  mmap(NULL, 200704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x73291ba7c000
+4814  read(3, "", 98304)                = 0
+4814  fstat(1, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+4814  close(3)                          = 0
+4814  write(1, "428\n", 4)              = 4
+4814  close(1)                          = 0
+4814  close(2)                          = 0
+4814  exit_group(0)                     = ?
+4814  +++ exited with 0 +++

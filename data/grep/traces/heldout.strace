@@ -1,0 +1,102 @@
+4834  execve("/usr/bin/grep", ["/usr/bin/grep", "-r", "-n", "ERROR", "logs"], 0x7ffd240b5c68 /* 30 vars */) = 0
+4834  brk(NULL)                         = 0x5730f8cb4000
+4834  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7eebcd2f6000
+4834  access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+4834  openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+4834  fstat(3, {st_mode=S_IFREG|0644, st_size=20767, ...}) = 0
+4834  mmap(NULL, 20767, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7eebcd2f0000
+4834  close(3)                          = 0
+4834  openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3
+4834  read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+4834  fstat(3, {st_mode=S_IFREG|0644, st_size=699056, ...}) = 0
+4834  mmap(NULL, 701112, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7eebcd244000
+4834  mmap(0x7eebcd247000, 507904, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7eebcd247000
+4834  mmap(0x7eebcd2c3000, 176128, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7f000) = 0x7eebcd2c3000
+4834  mmap(0x7eebcd2ee000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xa9000) = 0x7eebcd2ee000
+4834  close(3)                          = 0
+4834  openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+4834  read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \250\2\0\0\0\0\0"..., 832) = 832
+4834  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+4834  fstat(3, {st_mode=S_IFREG|0755, st_size=2190608, ...}) = 0
+4834  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+4834  mmap(NULL, 2231696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7eebcd000000
+4834  mmap(0x7eebcd028000, 1671168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7eebcd028000
+4834  mmap(0x7eebcd1c0000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x7eebcd1c0000
+4834  mmap(0x7eebcd20e000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20e000) = 0x7eebcd20e000
+4834  mmap(0x7eebcd214000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7eebcd214000
+4834  close(3)                          = 0
+4834  mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7eebcd241000
+4834  arch_prctl(ARCH_SET_FS, 0x7eebcd241740) = 0
+4834  set_tid_address(0x7eebcd241d68)   = 4834
+4834  set_robust_list(0x7eebcd241a20, 24) = 0
+4834  rseq(0x7eebcd2416a0, 0x20, 0, 0x53053053) = 0
+4834  mprotect(0x7eebcd20e000, 16384, PROT_READ) = 0
+4834  mprotect(0x7eebcd2ee000, 4096, PROT_READ) = 0
+4834  mprotect(0x5730e50dc000, 8192, PROT_READ) = 0
+4834  mprotect(0x7eebcd33b000, 8192, PROT_READ) = 0
+4834  prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+4834  getrandom("\x6b\x5a\xc8\x16\x29\xe2\x5a\x0f", 8, GRND_NONBLOCK) = 8
+4834  munmap(0x7eebcd2f0000, 20767)     = 0
+4834  brk(NULL)                         = 0x5730f8cb4000
+4834  brk(0x5730f8cd5000)               = 0x5730f8cd5000
+4834  openat(AT_FDCWD, "/proc/self/maps", O_RDONLY) = 3
+4834  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7eebcd2f4000
+4834  lseek(3, 0, SEEK_SET)             = 0
+4834  read(3, "5730e50af000-5730e50b3000 r--p 0"..., 8192) = 2833
+4834  read(3, "", 5359)                 = 0
+4834  close(3)                          = 0
+4834  munmap(0x7eebcd2f4000, 8192)      = 0
+4834  sigaltstack({ss_sp=0x5730e50de700, ss_flags=0, ss_size=65536}, NULL) = 0
+4834  rt_sigaction(SIGSEGV, {sa_handler=0x5730e50d4c00, sa_mask=[HUP INT QUIT USR1 USR2 PIPE ALRM TERM CHLD URG XCPU XFSZ VTALRM PROF WINCH IO PWR], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7eebcd045cb0}, NULL, 8) = 0
+4834  rt_sigaction(SIGSEGV, {sa_handler=0x5730e50d4c00, sa_mask=[HUP INT QUIT USR1 USR2 PIPE ALRM TERM CHLD URG XCPU XFSZ VTALRM PROF WINCH IO PWR], sa_flags=SA_RESTORER|SA_ONSTACK|SA_SIGINFO, sa_restorer=0x7eebcd045cb0}, NULL, 8) = 0
+4834  fstat(1, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+4834  openat(AT_FDCWD, "logs", O_RDONLY|O_NOCTTY) = 3
+4834  fstat(3, {st_mode=S_IFDIR|0755, st_size=80, ...}) = 0
+4834  close(3)                          = 0
+4834  newfstatat(AT_FDCWD, "logs", {st_mode=S_IFDIR|0755, st_size=80, ...}, 0) = 0
+4834  openat(AT_FDCWD, "logs", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+4834  fstat(3, {st_mode=S_IFDIR|0755, st_size=80, ...}) = 0
+4834  fcntl(3, F_GETFL)                 = 0x18800 (flags O_RDONLY|O_NONBLOCK|O_LARGEFILE|O_DIRECTORY)
+4834  fcntl(3, F_SETFD, FD_CLOEXEC)     = 0
+4834  brk(0x5730f8cfb000)               = 0x5730f8cfb000
+4834  fstat(3, {st_mode=S_IFDIR|0755, st_size=80, ...}) = 0
+4834  fcntl(3, F_DUPFD_CLOEXEC, 3)      = 4
+4834  getdents64(3, 0x5730f8cd2c90 /* 4 entries */, 32768) = 104
+4834  getdents64(3, 0x5730f8cd2c90 /* 0 entries */, 32768) = 0
+4834  brk(0x5730f8cf3000)               = 0x5730f8cf3000
+4834  close(3)                          = 0
+4834  openat(4, "app.log", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_NOFOLLOW) = 3
+4834  fstat(3, {st_mode=S_IFREG|0644, st_size=41317, ...}) = 0
+4834  read(3, "line 1 ok\nline 2 ok\nline 3 ok\nli"..., 98304) = 41317
+4834  fstat(1, {st_mode=S_IFREG|0644, st_size=0, ...}) = 0
+4834  write(1, "logs/app.log:7:line 7 ERROR disk"..., 4096) = 4096
+4834  write(1, "ne 784 ERROR disk\nlogs/app.log:7"..., 4096) = 4096
+4834  write(1, "/app.log:1533:line 1533 ERROR di"..., 4096) = 4096
+4834  mmap(NULL, 200704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7eebccfcf000
+4834  read(3, "", 98304)                = 0
+4834  close(3)                          = 0
+4834  newfstatat(4, "old", {st_mode=S_IFDIR|0755, st_size=60, ...}, AT_SYMLINK_NOFOLLOW) = 0
+4834  openat(4, "old", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_NOFOLLOW|O_CLOEXEC|O_DIRECTORY) = 3
+4834  fstat(3, {st_mode=S_IFDIR|0755, st_size=60, ...}) = 0
+4834  fcntl(3, F_GETFL)                 = 0x38800 (flags O_RDONLY|O_NONBLOCK|O_LARGEFILE|O_NOFOLLOW|O_DIRECTORY)
+4834  fcntl(3, F_SETFD, FD_CLOEXEC)     = 0
+4834  fstat(3, {st_mode=S_IFDIR|0755, st_size=60, ...}) = 0
+4834  fstatfs(3, {f_type=TMPFS_MAGIC, f_bsize=4096, f_blocks=1008340, f_bfree=1008313, f_bavail=1008313, f_files=1048576, f_ffree=1048560, f_fsid={val=[0xa41e5b5e, 0x409f02fe]}, f_namelen=255, f_frsize=4096, f_flags=ST_VALID|ST_NOSUID|ST_NODEV}) = 0
+4834  fcntl(3, F_DUPFD_CLOEXEC, 3)      = 5
+4834  getdents64(3, 0x5730f8cb8b70 /* 3 entries */, 32768) = 80
+4834  getdents64(3, 0x5730f8cb8b70 /* 0 entries */, 32768) = 0
+4834  close(3)                          = 0
+4834  openat(5, "app.1.log", O_RDONLY|O_NOCTTY|O_NONBLOCK|O_NOFOLLOW) = 3
+4834  fstat(3, {st_mode=S_IFREG|0644, st_size=6460, ...}) = 0
+4834  read(3, "line 1 ok\nline 2 ok\nline 3 ok\nli"..., 98304) = 6460
+4834  write(1, "app.log:2268:line 2268 ERROR dis"..., 4096) = 4096
+4834  read(3, "", 98304)                = 0
+4834  close(3)                          = 0
+4834  close(5)                          = 0
+4834  close(4)                          = 0
+4834  write(1, "ld/app.1.log:7:line 7 ERROR disk"..., 3017) = 3017
+4834  close(1)                          = 0
+4834  brk(0x5730f8cd9000)               = 0x5730f8cd9000
+4834  close(2)                          = 0
+4834  exit_group(0)                     = ?
+4834  +++ exited with 0 +++

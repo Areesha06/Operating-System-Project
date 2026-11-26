@@ -1,0 +1,20 @@
+{
+  "program": "xz",
+  "source": "llama3.2:3b",
+  "prompt": "a",
+  "repeat": 3,
+  "allow": [],
+  "json_valid": false,
+  "extraction": "failed",
+  "raw_output": "{\"allow\": [\"openat\", \"read\", \"write\", \"open\", \"create\", \"close\", \"exit\", \"exit_group\", \"wait\", \"waitid\", \"waitpid\", \"pause\", \"msr\", \"newfstatat\", \"newfstat\", \"fstat\", \"fstatat\", \"fdatasync\", \"fsync\", \"fsync\", \"fsyncfs\", \"fsync_file\", \"getpid\", \"getppid\", \"getuid\", \"geteuid\", \"geteffectiveuid\", \"getresuid\", \"getresgid\", \"getgroups\", \"getegid\", \"setresuid\", \"setresgid\", \"setgroups\", \"setegid\", \"chown\", \"lchown\", \"chownat\", \"lchownat\", \"fchown\", \"fchownat\", \"umask\", \"umaskat\", \"newfstat\", \"newstat\", \"fstat\", \"fstatat\", \"fdatasync\", \"fsync\", \"fsyncfs\", \"fsync_file\", \"getpid\", \"getppid\", \"getuid\", \"geteuid\", \"geteffectiveuid\", \"getresuid\", \"getresgid\", \"getgroups\", \"getegid\", \"setresuid\", \"setresgid\", \"setgroups\", \"setegid\", \"close\", \"creat\", \"ftruncate\", \"futimes\", \"futimens\", \"fdatasync\", \"fsync\", \"fsyncfs\", \"fsync_file\", \"getpid\", \"getppid\", \"getuid\", \"geteuid\", \"geteffectiveuid\", \"getresuid\", \"getresgid\", \"getgroups\", \"getegid\", \"setresuid\", \"setresgid\", \"setgroups\", \"setegid\", \"open\", \"openat\", \"openbyhandle\", \"openbyfd\", \"openbyfdanddir\", \"openbyfdanddirat\", \"openbyfdanddirat64\", \"openbyfdanddirat64x64\", \"openbyfdanddiratmmap\", \"openbyfdanddiratmmap64\", \"openbyfdanddiratmmapx64\", \"openbyfdanddiratmmapx64x64\", \"read\", \"readat\", \"readv\", \"readvmin\", \"readvmax\", \"readvminmax\", \"readvmaxmax\", \"pread\", \"preadat\", \"preadv\", \"preadvmin\", \"preadvmax\", \"preadvminmax\", \"preadvmaxmax\", \"write\", \"writeat\", \"writev\", \"writevmin\", \"writevmax\", \"writevminmax\", \"writevmaxmax\", \"write\", \"mmap\", \"munmap\", \"mprotect\", \"lock\", \"unlock\", \"lockf\", \"fsync\", \"fsyncfs\", \"fsync_file\", \"getpid\", \"getppid\", \"getuid\", \"geteuid\", \"geteffectiveuid\", \"getresuid\", \"getresgid\", \"getgroups\", \"getegid\", \"setresuid\", \"setresgid\", \"setgroups\", \"setegid\", \"chown\", \"lchown\", \"chownat\", \"lchownat\", \"fchown\", \"fchownat\", \"umask\", \"umaskat\", \"exit\", \"exit_group\", \"getcpu\", \"getcpu_stat\", \"getcpu_freq\", \"getcpu_stat_num\", \"setcpu\", \"setcpu_num\", \"getcpu_num\", \"getcpu_freq_num\", \"getcpu_stat_num\", \"getcpu_stat\", \"getcpu_freq\", \"getcpu\", \"setcpu\", \"setcpu_num\", \"getcpu_num\", \"getcpu_freq_num\", \"setcpu_freq\", \"setcpu_freq_num\", \"exit\", \"exit_group\", \"wait\", \"waitid\", \"waitpid\", \"pause\", \"msr\", \"newfstatat\", \"newfstat\", \"fstat\", \"fstatat\", \"fdatasync\", \"fsync\", \"fsyncfs\", \"fsync_file\", \"getpid\", \"getppid\", \"getuid\", \"geteuid\", \"geteffectiveuid\", \"getresuid\", \"getresgid\", \"getgroups\", \"getegid\", \"setresuid\", \"setresgid\", \"setgroups\", \"setegid\", \"chown\", \"lchown\", \"chownat\", \"lchownat\", \"fchown\", \"fchownat\", \"umask\", \"umaskat\", \"newfstat\", \"newstat\", \"fstat\", \"fstatat\", \"fdatasync\", \"fsync\", \"fsyncfs\", \"fs",
+  "temperature": 0.7,
+  "seed": 3,
+  "wall_s": 10.68,
+  "total_s": 10.68,
+  "load_s": 0.0,
+  "prompt_tokens": 209,
+  "output_tokens": 1024,
+  "gen_s": 10.55,
+  "system_prompt": "You are a Linux security engineer who writes seccomp allow-lists.\nA seccomp allow-list is the set of system calls a program is permitted to make.\nEvery system call NOT on the list is blocked and the program is killed if it makes one.\n\nRules:\n1. Use exact Linux x86_64 system call names as in <asm/unistd_64.h>, for example: openat, newfstatat, exit_group.\n2. The program must keep working in ALL of its normal uses, not only the one described.\n3. Do NOT include system calls the program does not need for normal operation. Every extra system call is attack surface.\n4. Reply with JSON only, in exactly this form:\n{\"allow\": [\"syscall_1\", \"syscall_2\"], \"notes\": \"one short sentence\"}",
+  "user_prompt": "Program: xz\n\nWrite the seccomp allow-list for this program."
+}

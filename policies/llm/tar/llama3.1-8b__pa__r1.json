@@ -1,0 +1,31 @@
+{
+  "program": "tar",
+  "source": "llama3.1:8b",
+  "prompt": "a",
+  "repeat": 1,
+  "allow": [
+    "close",
+    "exit_group",
+    "getdents64",
+    "newfstatat",
+    "openat",
+    "pread64",
+    "read",
+    "readv",
+    "statx",
+    "write"
+  ],
+  "json_valid": true,
+  "extraction": "direct",
+  "raw_output": "{\n  \"allow\": [\n    \"close\",\n    \"exit_group\",\n    \"getdents64\",\n    \"newfstatat\",\n    \"openat\",\n    \"pread64\",\n    \"read\",\n    \"readv\",\n    \"statx\",\n    \"write\"\n  ],\n  \"notes\": \"Tar requires basic file I/O and stat capabilities\"\n}",
+  "temperature": 0.7,
+  "seed": 1,
+  "wall_s": 1.65,
+  "total_s": 1.65,
+  "load_s": 0.0,
+  "prompt_tokens": 198,
+  "output_tokens": 76,
+  "gen_s": 1.49,
+  "system_prompt": "You are a Linux security engineer who writes seccomp allow-lists.\nA seccomp allow-list is the set of system calls a program is permitted to make.\nEvery system call NOT on the list is blocked and the program is killed if it makes one.\n\nRules:\n1. Use exact Linux x86_64 system call names as in <asm/unistd_64.h>, for example: openat, newfstatat, exit_group.\n2. The program must keep working in ALL of its normal uses, not only the one described.\n3. Do NOT include system calls the program does not need for normal operation. Every extra system call is attack surface.\n4. Reply with JSON only, in exactly this form:\n{\"allow\": [\"syscall_1\", \"syscall_2\"], \"notes\": \"one short sentence\"}",
+  "user_prompt": "Program: tar\n\nWrite the seccomp allow-list for this program."
+}

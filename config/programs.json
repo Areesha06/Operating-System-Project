@@ -1,0 +1,78 @@
+{
+  "_comment": "The 10 test programs (proposal section 3, step 1). Each has a training run (traced; policies are built from it) and a different held-out run (never shown to any policy generator). Every run executes in a fresh scratch directory. 'setup' commands run with bash first and are NOT traced. 'check' runs afterwards and must succeed for the run to count as passed. {BIN} = programs/bin, {WORKLOADS} = programs/workloads.",
+  "programs": {
+    "gzip": {
+      "setup": ["head -c 300000 /dev/urandom | base64 > input.txt"],
+      "runs": {
+        "training": {"argv": ["gzip", "-c", "input.txt"], "stdout": "out.gz", "check": "gzip -t out.gz"},
+        "heldout":  {"argv": ["gzip", "-f", "input.txt"], "check": "test -f input.txt.gz && test ! -f input.txt && gzip -t input.txt.gz"}
+      }
+    },
+    "xz": {
+      "setup": ["head -c 1500000 /dev/urandom | base64 > input.txt"],
+      "runs": {
+        "training": {"argv": ["xz", "-c", "-T1", "input.txt"], "stdout": "out.xz", "check": "xz -t out.xz"},
+        "heldout":  {"argv": ["xz", "-T4", "--block-size=200KiB", "-k", "-f", "input.txt"], "check": "test -f input.txt && xz -t input.txt.xz"}
+      }
+    },
+    "tar": {
+      "setup": ["mkdir -p srcdir/sub", "head -c 50000 /dev/urandom > srcdir/a.bin", "echo hello > srcdir/sub/b.txt"],
+      "runs": {
+        "training": {"argv": ["tar", "-cf", "archive.tar", "srcdir"], "check": "tar -tf archive.tar | grep -q a.bin"},
+        "heldout":  {"setup": ["tar -cf archive.tar srcdir", "mkdir out"], "argv": ["tar", "-xf", "archive.tar", "-C", "out"], "check": "diff -r srcdir out/srcdir"}
+      }
+    },
+    "cp": {
+      "setup": ["mkdir -p srcdir/sub", "head -c 50000 /dev/urandom > srcdir/a.bin", "echo hello > srcdir/sub/b.txt", "chmod 640 srcdir/sub/b.txt"],
+      "runs": {
+        "training": {"argv": ["cp", "srcdir/a.bin", "copy.bin"], "check": "cmp srcdir/a.bin copy.bin"},
+        "heldout":  {"argv": ["cp", "-rp", "srcdir", "dstdir"], "check": "diff -r srcdir dstdir"}
+      }
+    },
+    "grep": {
+      "setup": ["mkdir -p logs/old", "for i in $(seq 1 3000); do if [ $((i % 7)) -eq 0 ]; then echo \"line $i ERROR disk\"; else echo \"line $i ok\"; fi; done > log.txt", "cp log.txt logs/app.log", "head -n 500 log.txt > logs/old/app.1.log"],
+      "runs": {
+        "training": {"argv": ["grep", "-c", "ERROR", "log.txt"], "stdout": "count.txt", "check": "test \"$(cat count.txt)\" = 428"},
+        "heldout":  {"argv": ["grep", "-r", "-n", "ERROR", "logs"], "stdout": "matches.txt", "check": "grep -q 'logs/old/app.1.log:7:' matches.txt"}
+      }
+    },
+    "sort": {
+      "setup": ["head -c 2000000 /dev/urandom | base64 -w 40 > data.txt"],
+      "runs": {
+        "training": {"argv": ["sort", "--parallel=1", "-o", "sorted.txt", "data.txt"], "check": "sort -c sorted.txt"},
+        "heldout":  {"argv": ["sort", "--parallel=4", "-S", "64K", "-T", ".", "-o", "sorted.txt", "data.txt"], "check": "sort -c sorted.txt"}
+      }
+    },
+    "find": {
+      "setup": ["mkdir -p srcdir/a/b srcdir/c", "echo one > srcdir/a/x.txt", "printf 'two\\nthree\\n' > srcdir/a/b/y.txt", "echo four > srcdir/c/z.txt", "echo skip > srcdir/c/w.log"],
+      "runs": {
+        "training": {"argv": ["find", "srcdir", "-name", "*.txt"], "stdout": "found.txt", "check": "test \"$(wc -l < found.txt)\" -eq 3"},
+        "heldout":  {"argv": ["find", "srcdir", "-name", "*.txt", "-exec", "wc", "-l", "{}", "+"], "stdout": "counts.txt", "check": "grep -q '4 total' counts.txt"}
+      }
+    },
+    "sqlite3": {
+      "setup": ["cp {WORKLOADS}/sqlite_insert.sql {WORKLOADS}/sqlite_query.sql ."],
+      "runs": {
+        "training": {"argv": ["sqlite3", "test.db"], "stdin": "sqlite_insert.sql", "check": "test -s test.db"},
+        "heldout":  {"setup": ["sqlite3 test.db < sqlite_insert.sql"], "argv": ["sqlite3", "test.db"], "stdin": "sqlite_query.sql", "stdout": "result.txt", "check": "grep -q '^OK' result.txt"}
+      }
+    },
+    "mini_httpd": {
+      "setup": ["mkdir -p www/docs", "echo '<h1>hello</h1>' > www/index.html", "echo notes > www/docs/notes.txt"],
+      "runs": {
+        "training": {"argv": ["{BIN}/mini_httpd", "18080", "www"], "client": {"port": 18080, "path": "/index.html", "expect": "200"}},
+        "heldout":  {"argv": ["{BIN}/mini_httpd", "18080", "www"], "client": {"port": 18080, "path": "/docs", "expect": "200"}}
+      }
+    },
+    "worker": {
+      "setup": [],
+      "runs": {
+        "training": {"argv": ["{BIN}/worker", "0"], "stdout": "out.txt", "check": "grep -q total= out.txt"},
+        "heldout":  {"argv": ["{BIN}/worker", "4"], "stdout": "out.txt", "check": "grep -q total= out.txt"}
+      }
+    }
+  },
+  "probe": {
+    "argv": ["{BIN}/escape_probe"]
+  }
+}

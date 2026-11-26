@@ -1,0 +1,15 @@
+{
+  "program": "mini_httpd",
+  "run": "heldout",
+  "passed_under_strace": true,
+  "argv": [
+    "{BIN}/mini_httpd",
+    "18080",
+    "www"
+  ],
+  "kernel": "6.18.58.1-microsoft-standard-WSL2",
+  "machine": "x86_64",
+  "glibc": "glibc 2.43",
+  "strace": "strace -- version 6.19",
+  "recorded_at": "2026-11-26T20:38:18"
+}

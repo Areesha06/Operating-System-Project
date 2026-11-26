@@ -1,0 +1,20 @@
+{
+  "program": "sqlite3",
+  "source": "llama3.2:3b",
+  "prompt": "a",
+  "repeat": 1,
+  "allow": [],
+  "json_valid": false,
+  "extraction": "failed",
+  "raw_output": "```json\n{\"allow\": [\"open\", \"openat\", \"close\", \"read\", \"write\", \"pread\", \"pwrite\", \"lseek\", \"exit\", \"exit_group\", \"wait\", \"waitid\", \"waitpid\", \"newfstatat\", \"newfstatat64\", \"fstatat\", \"fstatat64\", \"fchown\", \"fchownat\", \"fchownat64\", \"fchownr\", \"fchownr64\", \"fchmod\", \"fchmodat\", \"fchmodat64\", \"fstat\", \"stat\", \"stat64\", \"fstatat\", \"fstatat64\", \"fcntl\", \"fcntlat\", \"fcntlat64\", \"create\", \"mknod\", \"umount\", \"unmount2\", \"fsync\", \"fsyncfs\", \"fsyncf\", \"fsync\", \"fdatasync\", \"fsyncf\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"open\", \"openat\", \"openat64\", \"mmap\", \"mmap2\", \"mmap64\", \"mmap2\", \"mmap64\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\", \"mmap\",",
+  "temperature": 0.7,
+  "seed": 1,
+  "wall_s": 10.85,
+  "total_s": 10.85,
+  "load_s": 0.0,
+  "prompt_tokens": 209,
+  "output_tokens": 1024,
+  "gen_s": 10.75,
+  "system_prompt": "You are a Linux security engineer who writes seccomp allow-lists.\nA seccomp allow-list is the set of system calls a program is permitted to make.\nEvery system call NOT on the list is blocked and the program is killed if it makes one.\n\nRules:\n1. Use exact Linux x86_64 system call names as in <asm/unistd_64.h>, for example: openat, newfstatat, exit_group.\n2. The program must keep working in ALL of its normal uses, not only the one described.\n3. Do NOT include system calls the program does not need for normal operation. Every extra system call is attack surface.\n4. Reply with JSON only, in exactly this form:\n{\"allow\": [\"syscall_1\", \"syscall_2\"], \"notes\": \"one short sentence\"}",
+  "user_prompt": "Program: sqlite3\n\nWrite the seccomp allow-list for this program."
+}

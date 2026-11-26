@@ -1,0 +1,20 @@
+{
+  "program": "tar",
+  "source": "llama3.2:3b",
+  "prompt": "a",
+  "repeat": 4,
+  "allow": [],
+  "json_valid": false,
+  "extraction": "failed",
+  "raw_output": "{\"allow\": [\"openat\", \"creat\", \"read\", \"write\", \"linkat\", \"unlinkat\", \"mknod\", \"chown\", \"chmod\", \"chgrp\", \"fstat\", \"ftruncate\", \"getuid\", \"geteuid\", \"getgid\", \"getegid\", \"setuid\", \"setgid\", \"newfstatat\", \"open\", \"openat64\", \"read\", \"write\", \"writev\", \"mmap\", \"munmap\", \"msync\", \"fadvise\", \"fdatasync\", \"fsync\", \"truncat\", \"newfstatat\", \"lstat\", \"stat\", \"fstat\", \"lstat64\", \"stat64\", \"ftruncate64\", \"fchown\", \"fchownat\", \"fchmod\", \"fchownat64\", \"fchmodat\", \"futimes\", \"futimens\", \"fdatasync\", \"fsync\", \"fdatasync\", \"fsync\", \"fstat\", \"fstatat\", \"fstatat64\", \"fstatat\", \"futimens\", \"newfstatat\", \"futimens\", \"newfstatat\", \"read\", \"readv\", \"write\", \"writev\", \"symlink\", \"symlinkat\", \"unlink\", \"unlinkat\", \"renamelf\", \"renamemaker\", \"link\", \"linkat\", \"mknod\", \"newfstatat\", \"getuid\", \"geteuid\", \"getgid\", \"getegid\", \"setuid\", \"setgid\", \"fstatat\", \"fstatat64\", \"futimens\", \"newfstatat\", \"futimens\", \"newfstatat\", \"read\", \"readv\", \"write\", \"writev\", \"fadvise\", \"fdatasync\", \"fsync\", \"fdatasync\", \"fsync\", \"fstat\", \"fstatat\", \"fstatat64\", \"fstatat\", \"futimens\", \"newfstatat\", \"futimens\", \"newfstatat\", \"symlink\", \"symlinkat\", \"read\", \"readv\", \"write\", \"writev\", \"symlink\", \"symlinkat\", \"unlink\", \"unlinkat\", \"renamelf\", \"renamemaker\", \"link\", \"linkat\", \"mknod\", \"newfstatat\", \"getuid\", \"geteuid\", \"getgid\", \"getegid\", \"setuid\", \"setgid\", \"fstatat\", \"fstatat64\", \"futimens\", \"newfstatat\", \"futimens\", \"newfstatat\", \"futimens\", \"newfstatat\", \"futimens\", \"newfstatat\", \"read\", \"readv\", \"write\", \"writev\", \"fadvise\", \"fdatasync\", \"fsync\", \"fdatasync\", \"fsync\", \"fstat\", \"fstatat\", \"fstatat64\", \"fstatat\", \"futimens\", \"newfstatat\", \"futimens\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat\", \"newfstatat",
+  "temperature": 0.7,
+  "seed": 4,
+  "wall_s": 10.79,
+  "total_s": 10.79,
+  "load_s": 0.0,
+  "prompt_tokens": 208,
+  "output_tokens": 1024,
+  "gen_s": 10.64,
+  "system_prompt": "You are a Linux security engineer who writes seccomp allow-lists.\nA seccomp allow-list is the set of system calls a program is permitted to make.\nEvery system call NOT on the list is blocked and the program is killed if it makes one.\n\nRules:\n1. Use exact Linux x86_64 system call names as in <asm/unistd_64.h>, for example: openat, newfstatat, exit_group.\n2. The program must keep working in ALL of its normal uses, not only the one described.\n3. Do NOT include system calls the program does not need for normal operation. Every extra system call is attack surface.\n4. Reply with JSON only, in exactly this form:\n{\"allow\": [\"syscall_1\", \"syscall_2\"], \"notes\": \"one short sentence\"}",
+  "user_prompt": "Program: tar\n\nWrite the seccomp allow-list for this program."
+}

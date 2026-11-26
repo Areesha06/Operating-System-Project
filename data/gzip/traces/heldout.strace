@@ -1,0 +1,76 @@
+4672  execve("/usr/bin/gzip", ["/usr/bin/gzip", "-f", "input.txt"], 0x7ffc4d73ba88 /* 30 vars */) = 0
+4672  brk(NULL)                         = 0x558442d62000
+4672  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x751a73bda000
+4672  access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+4672  openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+4672  fstat(3, {st_mode=S_IFREG|0644, st_size=20767, ...}) = 0
+4672  mmap(NULL, 20767, PROT_READ, MAP_PRIVATE, 3, 0) = 0x751a73bd4000
+4672  close(3)                          = 0
+4672  openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+4672  read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 \250\2\0\0\0\0\0"..., 832) = 832
+4672  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+4672  fstat(3, {st_mode=S_IFREG|0755, st_size=2190608, ...}) = 0
+4672  pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 840, 64) = 840
+4672  mmap(NULL, 2231696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x751a73800000
+4672  mmap(0x751a73828000, 1671168, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x751a73828000
+4672  mmap(0x751a739c0000, 319488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1c0000) = 0x751a739c0000
+4672  mmap(0x751a73a0e000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x20e000) = 0x751a73a0e000
+4672  mmap(0x751a73a14000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x751a73a14000
+4672  close(3)                          = 0
+4672  mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x751a73bd1000
+4672  arch_prctl(ARCH_SET_FS, 0x751a73bd1740) = 0
+4672  set_tid_address(0x751a73bd1d68)   = 4672
+4672  set_robust_list(0x751a73bd1a20, 24) = 0
+4672  rseq(0x751a73bd16a0, 0x20, 0, 0x53053053) = 0
+4672  mprotect(0x751a73a0e000, 16384, PROT_READ) = 0
+4672  mprotect(0x55842dcf2000, 4096, PROT_READ) = 0
+4672  mprotect(0x751a73c1f000, 8192, PROT_READ) = 0
+4672  prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+4672  getrandom("\x8d\x87\x58\xe6\xf6\xd4\x2d\xa4", 8, GRND_NONBLOCK) = 8
+4672  munmap(0x751a73bd4000, 20767)     = 0
+4672  openat(AT_FDCWD, ".", O_RDONLY|O_DIRECTORY) = 3
+4672  openat(3, "input.txt", O_RDONLY|O_NOCTTY|O_NONBLOCK) = 4
+4672  fstat(4, {st_mode=S_IFREG|0644, st_size=405264, ...}) = 0
+4672  brk(NULL)                         = 0x558442d62000
+4672  brk(0x558442d83000)               = 0x558442d83000
+4672  rt_sigaction(SIGINT, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+4672  rt_sigaction(SIGHUP, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+4672  rt_sigaction(SIGPIPE, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+4672  rt_sigaction(SIGTERM, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+4672  rt_sigaction(SIGXCPU, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+4672  rt_sigaction(SIGXFSZ, NULL, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+4672  rt_sigaction(SIGINT, {sa_handler=0x55842dce2210, sa_mask=[HUP INT PIPE TERM XCPU XFSZ], sa_flags=SA_RESTORER, sa_restorer=0x751a73845cb0}, NULL, 8) = 0
+4672  rt_sigaction(SIGHUP, {sa_handler=0x55842dce2210, sa_mask=[HUP INT PIPE TERM XCPU XFSZ], sa_flags=SA_RESTORER, sa_restorer=0x751a73845cb0}, NULL, 8) = 0
+4672  rt_sigaction(SIGPIPE, {sa_handler=0x55842dce2210, sa_mask=[HUP INT PIPE TERM XCPU XFSZ], sa_flags=SA_RESTORER, sa_restorer=0x751a73845cb0}, NULL, 8) = 0
+4672  rt_sigaction(SIGTERM, {sa_handler=0x55842dce2210, sa_mask=[HUP INT PIPE TERM XCPU XFSZ], sa_flags=SA_RESTORER, sa_restorer=0x751a73845cb0}, NULL, 8) = 0
+4672  rt_sigaction(SIGXCPU, {sa_handler=0x55842dce2210, sa_mask=[HUP INT PIPE TERM XCPU XFSZ], sa_flags=SA_RESTORER, sa_restorer=0x751a73845cb0}, NULL, 8) = 0
+4672  rt_sigaction(SIGXFSZ, {sa_handler=0x55842dce2210, sa_mask=[HUP INT PIPE TERM XCPU XFSZ], sa_flags=SA_RESTORER, sa_restorer=0x751a73845cb0}, NULL, 8) = 0
+4672  rt_sigprocmask(SIG_BLOCK, [HUP INT PIPE TERM XCPU XFSZ], [], 8) = 0
+4672  openat(3, "input.txt.gz", O_WRONLY|O_CREAT|O_EXCL, 0600) = 5
+4672  rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+4672  read(4, "TQf7u79AYZyHIX1ix/ekl5qTsFlhb/qy"..., 65536) = 65536
+4672  read(4, "3oaI1fmEib9BJygxoVxTN7vl3di/wYks"..., 32768) = 32768
+4672  read(4, "l6Euz4HhYxjz4tKEu22zSaOq\nJHawrH7"..., 32768) = 32768
+4672  read(4, "nnQ2khdJ6UKXHhI/320t0SAB6kcfqkYk"..., 32768) = 32768
+4672  read(4, "JO5vt2PHHSspiuW\nAs2ttQQxdSXDr5ds"..., 32768) = 32768
+4672  read(4, "/hAymWtjq8XqZZ7Wltgr4R8wIX2hcYSw"..., 32768) = 32768
+4672  read(4, "g2EUqU\nlFw1xiMyYaWIUnO31H4b7/JSI"..., 32768) = 32768
+4672  read(4, "wDjqPldQSiQgUNy+FIZ9ZIsBLjLXd8F9"..., 32768) = 32768
+4672  read(4, "n6Mtt5AguUBlCAdsS1xbVXZlft5cQa1Z"..., 32768) = 32768
+4672  read(4, "klexEgIasyi5V+Eb+NWU2sHffIPcZpn\n"..., 32768) = 32768
+4672  read(4, "poOL94+5Nt++nQPUi/Hwwy4Hc76NE5zW"..., 32768) = 32768
+4672  write(5, "\37\213\10\10eR\10k\0\3input.txt\0\24\235\265\272\243P\30E\373\373*\24"..., 262144) = 262144
+4672  read(4, "IqIs58t0AR/J9Tr+b0A6tH\nFsVDZGISE"..., 32768) = 12048
+4672  read(4, "", 20720)                = 0
+4672  write(5, "\37o\215\215\213!\36jY\325b\203[Op>\320\10\272\361\267,\247\313\343^|Iv\261\367Y"..., 45831) = 45831
+4672  close(4)                          = 0
+4672  utimensat(5, NULL, [{tv_sec=1795707493, tv_nsec=625670688} /* 2026-11-26T20:38:13.625670688+0500 */, {tv_sec=1795707493, tv_nsec=629670688} /* 2026-11-26T20:38:13.629670688+0500 */], 0) = 0
+4672  fchown(5, -1, 1000)               = 0
+4672  fchmod(5, 0644)                   = 0
+4672  fchown(5, 1000, -1)               = 0
+4672  close(5)                          = 0
+4672  rt_sigprocmask(SIG_BLOCK, [HUP INT PIPE TERM XCPU XFSZ], [], 8) = 0
+4672  unlinkat(3, "input.txt", 0)       = 0
+4672  rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+4672  exit_group(0)                     = ?
+4672  +++ exited with 0 +++

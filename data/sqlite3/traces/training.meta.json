@@ -1,0 +1,14 @@
+{
+  "program": "sqlite3",
+  "run": "training",
+  "passed_under_strace": true,
+  "argv": [
+    "sqlite3",
+    "test.db"
+  ],
+  "kernel": "6.18.58.1-microsoft-standard-WSL2",
+  "machine": "x86_64",
+  "glibc": "glibc 2.43",
+  "strace": "strace -- version 6.19",
+  "recorded_at": "2026-11-26T20:38:17"
+}

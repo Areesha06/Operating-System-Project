@@ -1,0 +1,20 @@
+{
+  "program": "sort",
+  "source": "llama3.2:3b",
+  "prompt": "a",
+  "repeat": 1,
+  "allow": [],
+  "json_valid": false,
+  "extraction": "failed",
+  "raw_output": "```\n{\"allow\": [\"openat\", \"read\", \"write\", \"close\", \"exit_group\", \"waitpid\", \"wait\", \"getpid\", \"getppid\", \"fork\", \"kill\", \"killpg\", \"pause\", \"utime\", \"futex\", \"futexat\", \"futexwait\", \"futexwaitpid\", \"futex timedwait\", \"futex timedwaitpid\", \"read\", \"write\", \"close\", \"mmap\", \"munmap\", \"msync\", \"getmsg\", \"putmsg\", \"send\", \"recv\", \"accept\", \"accept4\", \"getmsg\", \"putmsg\", \"send\", \"recv\", \"socket\", \"connect\", \"listen\", \"accept\", \"sendfile\", \"pread64\", \"pwrite64\", \"lseek\", \"msync\", \"read\", \"write\", \"close\", \"getmsg\", \"putmsg\", \"send\", \"recv\", \"epollwait\", \"epoll_ctl\", \"epoll_pwait\", \"fdatasync\", \"fdatasync\", \"fdatasync\", \"fsync\", \"fdatasync\", \"fdatasync\", \"fsync\", \"fdatasync\", \"fsync\", \"fdatasync\", \"fsync\", \"fdatasync\", \"fsync\", \"fdatasync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync\", \"fsync",
+  "temperature": 0.7,
+  "seed": 1,
+  "wall_s": 10.56,
+  "total_s": 10.56,
+  "load_s": 0.0,
+  "prompt_tokens": 208,
+  "output_tokens": 1024,
+  "gen_s": 10.44,
+  "system_prompt": "You are a Linux security engineer who writes seccomp allow-lists.\nA seccomp allow-list is the set of system calls a program is permitted to make.\nEvery system call NOT on the list is blocked and the program is killed if it makes one.\n\nRules:\n1. Use exact Linux x86_64 system call names as in <asm/unistd_64.h>, for example: openat, newfstatat, exit_group.\n2. The program must keep working in ALL of its normal uses, not only the one described.\n3. Do NOT include system calls the program does not need for normal operation. Every extra system call is attack surface.\n4. Reply with JSON only, in exactly this form:\n{\"allow\": [\"syscall_1\", \"syscall_2\"], \"notes\": \"one short sentence\"}",
+  "user_prompt": "Program: sort\n\nWrite the seccomp allow-list for this program."
+}

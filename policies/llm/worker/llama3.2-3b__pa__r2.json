@@ -1,0 +1,30 @@
+{
+  "program": "worker",
+  "source": "llama3.2:3b",
+  "prompt": "a",
+  "repeat": 2,
+  "allow": [
+    "openat",
+    "newfstatat",
+    "read",
+    "write",
+    "mmap",
+    "msync",
+    "close",
+    "exit",
+    "exit_group"
+  ],
+  "json_valid": true,
+  "extraction": "direct",
+  "raw_output": "{\"allow\": [\"openat\", \"newfstatat\", \"read\", \"write\", \"mmap\", \"msync\", \"close\", \"exit\", \"exit_group\"], \"notes\": \"worker maintains file descriptor access for normal operation\"}",
+  "temperature": 0.7,
+  "seed": 2,
+  "wall_s": 0.56,
+  "total_s": 0.56,
+  "load_s": 0.0,
+  "prompt_tokens": 208,
+  "output_tokens": 51,
+  "gen_s": 0.49,
+  "system_prompt": "You are a Linux security engineer who writes seccomp allow-lists.\nA seccomp allow-list is the set of system calls a program is permitted to make.\nEvery system call NOT on the list is blocked and the program is killed if it makes one.\n\nRules:\n1. Use exact Linux x86_64 system call names as in <asm/unistd_64.h>, for example: openat, newfstatat, exit_group.\n2. The program must keep working in ALL of its normal uses, not only the one described.\n3. Do NOT include system calls the program does not need for normal operation. Every extra system call is attack surface.\n4. Reply with JSON only, in exactly this form:\n{\"allow\": [\"syscall_1\", \"syscall_2\"], \"notes\": \"one short sentence\"}",
+  "user_prompt": "Program: worker\n\nWrite the seccomp allow-list for this program."
+}

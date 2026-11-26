@@ -1,0 +1,63 @@
+# High-risk syscalls = the "significant syscalls blocked by the default profile" table in
+# Docker's seccomp documentation: https://docs.docker.com/engine/security/seccomp/
+# (retrieved 2026-11-26). Reasons are short summaries of Docker's explanations.
+#
+# Two rows of that table are NOT included: clone and socket. Docker blocks them only for
+# specific ARGUMENTS (namespace-creating clone flags; AF_ALG/AF_VSOCK sockets) and allows
+# them otherwise. Our policies are name-only, and normal programs need clone (threads,
+# child processes) and socket (networking), so counting them would mark ordinary
+# policies as high-risk.
+# Names that do not exist on x86_64 (e.g. vm86, stime, umount) are listed for completeness;
+# they can never appear in a valid x86_64 policy.
+acct               # process accounting; could disable resource limits/accounting
+add_key            # kernel keyring is not namespaced
+bpf                # loads potentially persistent BPF programs into the kernel
+clock_adjtime      # time/date is not namespaced
+clock_settime      # time/date is not namespaced
+create_module      # kernel module manipulation (obsolete)
+delete_module      # kernel module manipulation
+finit_module       # kernel module manipulation
+get_kernel_syms    # exposes kernel and module symbols (obsolete)
+get_mempolicy      # kernel memory / NUMA settings
+init_module        # kernel module manipulation
+ioperm             # changes kernel I/O privilege levels
+iopl               # changes kernel I/O privilege levels
+io_uring_enter     # io_uring: vulnerabilities used to break out of containers
+io_uring_register  # io_uring: vulnerabilities used to break out of containers
+io_uring_setup     # io_uring: vulnerabilities used to break out of containers
+kcmp               # process inspection
+kexec_file_load    # loads a new kernel
+kexec_load         # loads a new kernel
+keyctl             # kernel keyring is not namespaced
+lookup_dcookie     # tracing/profiling; can leak host information
+mbind              # kernel memory / NUMA settings
+mount              # mounting filesystems
+move_pages         # kernel memory / NUMA settings
+nfsservctl         # kernel NFS daemon (obsolete)
+open_by_handle_at  # cause of an old container breakout
+perf_event_open    # tracing/profiling; can leak host information
+personality        # enables other execution domains; poorly tested kernel code
+pivot_root         # changes the root mount; should be privileged
+process_vm_readv   # reads another process's memory
+process_vm_writev  # writes another process's memory
+ptrace             # traces/controls other processes
+query_module       # kernel module manipulation (obsolete)
+quotactl           # quota control; could disable resource limits
+reboot             # reboots the host
+request_key        # kernel keyring is not namespaced
+set_mempolicy      # kernel memory / NUMA settings
+setns              # joins another namespace
+settimeofday       # time/date is not namespaced
+stime              # time/date is not namespaced
+swapon             # starts swapping to a file/device
+swapoff            # stops swapping to a file/device
+sysfs              # obsolete
+_sysctl            # obsolete, replaced by /proc/sys
+umount             # unmounting; should be privileged
+umount2            # unmounting; should be privileged
+unshare            # creates new namespaces
+uselib             # obsolete shared-library loading
+userfaultfd        # user-space page-fault handling
+ustat              # obsolete
+vm86               # in-kernel x86 real-mode virtual machine
+vm86old            # in-kernel x86 real-mode virtual machine
