@@ -83,14 +83,14 @@ Our committed results are the ones reported.
 
 **Ubuntu (tracing and enforcement machine)**
 ```bash
-git clone https://github.com/Areesha06/Operating-System-Project.git && cd OS-Project
+git clone https://github.com/Areesha06/Operating-System-Project.git && cd Operating-System-Project
 bash scripts/setup_ubuntu.sh     # apt packages, Python venv, build, syscall tables, man-page descriptions
 source .venv/bin/activate        # in every new terminal
 ```
 
 **Windows (LLM generation or analysis only)**, in PowerShell:
 ```powershell
-git clone https://github.com/Areesha06/Operating-System-Project.git; cd OS-Project
+git clone https://github.com/Areesha06/Operating-System-Project.git; cd Operating-System-Project
 py -m venv .venv; .venv\Scripts\activate
 pip install -r requirements.txt
 ollama pull llama3.2:3b; ollama pull llama3.1:8b     # only on the machine that generates policies
