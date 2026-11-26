@@ -42,11 +42,31 @@ enforcement runs must come from the **same** Linux machine.
 
 This repository contains our complete run: traces, 310 policies, enforcement results and figures.
 The scripts never overwrite finished work, so re-running a step on this clone reports
-"already done". There are two ways to check our results.
+"already done". There are two ways to check our results. Each option below is complete on its own;
+sections 3 and 4 are only needed to split the steps across several machines.
 
-### Option A: Recompute the analysis from our data (about 2 minutes, any OS)
+### Option A: Recompute the analysis from our data (about 2 minutes)
+
+Ubuntu / WSL2:
 
 ```bash
+git clone https://github.com/Areesha06/Operating-System-Project.git
+cd Operating-System-Project
+sudo apt-get update && sudo apt-get install -y python3-venv
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python analysis/evaluate_policies.py
+python analysis/make_figures.py
+```
+
+Windows (PowerShell):
+
+```powershell
+git clone https://github.com/Areesha06/Operating-System-Project.git
+cd Operating-System-Project
+py -m venv .venv
+.venv\Scripts\activate
 pip install -r requirements.txt
 python analysis/evaluate_policies.py
 python analysis/make_figures.py
@@ -56,16 +76,23 @@ This rebuilds `results/policy_metrics.csv`, `results/summary.md` and `results/fi
 committed traces, policies and enforcement results. The new `results/summary.md` should be
 identical to the committed one.
 
-### Option B: Run the whole experiment again from scratch (Linux + Ollama)
+### Option B: Run the whole experiment again from scratch (Ubuntu or WSL2, with Ollama)
 
-Do this in a fresh clone: it deletes our results and replaces them with yours.
+Needs Ubuntu 22.04/24.04 or Ubuntu on WSL2, sudo rights, internet access, and about 16 GB RAM
+for the 8B model. Run it in a fresh clone: it deletes our results and replaces them with yours.
 
 ```bash
+git clone https://github.com/Areesha06/Operating-System-Project.git
+cd Operating-System-Project
 bash scripts/setup_ubuntu.sh
 source .venv/bin/activate
-rm -rf data/* policies/baseline/* policies/llm/* results/*
+sudo apt-get install -y curl zstd
+curl -fsSL https://ollama.com/install.sh | sh
+ollama serve > /dev/null 2>&1 &    # harmless if Ollama is already running
+sleep 5
 ollama pull llama3.2:3b
 ollama pull llama3.1:8b
+rm -rf data/* policies/baseline/* policies/llm/* results/*
 python3 tracing/record_traces.py
 python3 tracing/make_baseline.py
 python3 harness/generate_policies.py
@@ -75,9 +102,9 @@ python3 analysis/evaluate_policies.py
 python3 analysis/make_figures.py
 ```
 
-The model step uses a fixed seed for each repeat, but a run on
-different hardware or with a different Ollama version may still give slightly different numbers.
-Our committed results are the ones reported.
+The model step uses a fixed seed for each repeat, but a run on different hardware or with a
+different Ollama version may still give slightly different numbers. Our committed results are
+the ones reported.
 
 ## 3. Setup
 
